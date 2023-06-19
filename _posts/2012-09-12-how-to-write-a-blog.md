@@ -1,8 +1,6 @@
 ---
 layout: post 
 title:  "test" 
-date: YYYY-MM-DD -0000
-categories: CATEGORY-1 CATEGORY-2
 ---
 
 ss
