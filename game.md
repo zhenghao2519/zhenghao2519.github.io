@@ -1,5 +1,5 @@
 ---
-title: Have some fun!
+title: Have some fun building 2048!
 layout: page
 permalink: /game
 ---
@@ -63,6 +63,8 @@ permalink: /game
     Press WASD or swipe the screen to start.  
     <br />
     Press R or click restart button to restart the game.
+    <br />
+    Detailed rules of 2048 can be found here in <a href="https://en.wikipedia.org/wiki/2048_(video_game)#Gameplay" style="color: #776e65;"><i><b>2048 Rules</b></i></a>
   </div>
   <div class="game-container">
     <div class="grid">
