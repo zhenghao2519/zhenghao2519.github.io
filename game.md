@@ -7,10 +7,6 @@ permalink: /game
 <head>
   <title>2048</title>
   <style>
-    body {
-      margin: 20px;
-      padding: 0;
-    }
     .instruction {
     	padding: 10px;
     	text-align: center;
