@@ -91,7 +91,7 @@ permalink: /game
   <footer>
     <p>
     <br />
-    This game is created by ChatGPT. 
+    99% of this game is created by ChatGPT. 
     <br />
     Welcome to the new era of AI!   ❛‿˂̵✧
     </p>
@@ -341,7 +341,7 @@ permalink: /game
       for (let i = 0; i < grid.length; i++) {
         for (let j = 0; j < grid[i].length; j++) {
           if (grid[i][j] === 2048) {
-            console.log("游戏胜利！");
+            console.log("You are the best! (ᕑᗢᓫ∗)˒");
             return;
           }
         }
@@ -389,7 +389,7 @@ permalink: /game
           }
         }
         if (!canMove) {
-            alert("Oh, Gameover...press R to try again");
+            alert("Gameover •ࡇ• press R or click the button to try again");
         }
       }
     }
