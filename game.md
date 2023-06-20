@@ -3,7 +3,6 @@ title: Have some fun!
 layout: page
 permalink: /game
 ---
-
 <html>
 <head>
   <title>2048</title>
@@ -18,7 +17,6 @@ permalink: /game
     	font-size: 14px;
     	color: #776e65;
     	font-family: Arial, sans-serif;
-    	margin-top: 20px;
     }
     .game-container {
       display: flex;
@@ -125,6 +123,10 @@ permalink: /game
       document.addEventListener("touchstart", handleTouchStart, false);
       document.addEventListener("touchmove", handleTouchMove, false);
       document.addEventListener("touchend", handleTouchEnd, false);
+      // 禁用页面滑动
+      document.addEventListener('touchmove', function(event) {
+        event.preventDefault();
+      }, { passive: false });
     });
     // 初始化游戏界面
     function initializeGrid() {
