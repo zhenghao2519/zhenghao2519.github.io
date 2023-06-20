@@ -8,7 +8,6 @@ permalink: /game
   <title>2048</title>
   <style>
     .instruction {
-    	padding: 10px;
     	text-align: center;
     	font-size: 14px;
     	color: #776e65;
@@ -63,7 +62,7 @@ permalink: /game
   <div class="instruction">
     Press WASD or swipe the screen to start.  
     <br />
-    Press R or click the button below to restart the game.
+    Press R or click restart button to restart the game.
   </div>
   <div class="game-container">
     <div class="grid">
