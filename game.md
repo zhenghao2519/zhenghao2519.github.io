@@ -12,6 +12,7 @@ permalink: /game
     	font-size: 14px;
     	color: #776e65;
     	font-family: Arial, sans-serif;
+    	background-color: #faf8ef;
     }
     .game-container {
       display: flex;
@@ -19,6 +20,8 @@ permalink: /game
       justify-content: center;
       align-items: center;
       height: auto;
+      background-color: #faf8ef;
+      border-radius: 50px;
     }
     .grid {
       display: grid;
@@ -46,9 +49,10 @@ permalink: /game
         color: #776e65;
         border: 4px solid hsl(35, 29%, 70%);
         padding: 10px 20px;
-        border-radius: 5px;
+        border-radius: 15px;
         font-size: 20px;
         cursor: pointer;
+        margin-bottom: 10px;
     }
     .restart-container {
         display:grid;
@@ -59,14 +63,14 @@ permalink: /game
   </style>
 </head>
 <body>
-  <div class="instruction">
-    Press WASD or swipe the screen to start.  
-    <br />
-    Press R or click restart button to restart the game.
-    <br />
-    Detailed rules of 2048 can be found here in <a href="https://en.wikipedia.org/wiki/2048_(video_game)#Gameplay" style="color: #776e65;"><i><b>Rules of 2048</b></i></a>
-  </div>
   <div class="game-container">
+    <div class="instruction">
+    	Press WASD or swipe the screen to start.  
+    	<br />
+    	Press R or click restart button to restart the game.
+    	<br />
+    	Detailed rules of 2048 can be found here in <a href="https://en.wikipedia.org/wiki/2048_(video_game)#Gameplay" style="color: #776e65;"><i><b>Rules of 2048</b></i></a>
+    </div>
     <div class="grid">
       <!-- 游戏方格 -->
       <div class="cell">0</div>
@@ -343,7 +347,7 @@ permalink: /game
       for (let i = 0; i < grid.length; i++) {
         for (let j = 0; j < grid[i].length; j++) {
           if (grid[i][j] === 2048) {
-            console.log("You are the best! (ᕑᗢᓫ∗)˒");
+            alert("You are the best! (ᕑᗢᓫ∗)˒");
             return;
           }
         }
