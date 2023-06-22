@@ -13,6 +13,8 @@ permalink: /game
     	color: #776e65;
     	font-family: Arial, sans-serif;
     	background-color: #faf8ef;
+    	margin-top: 20px;
+        margin-bottom: 20px;
     }
     .game-container {
       display: flex;
@@ -30,7 +32,7 @@ permalink: /game
       background-color: #bbada0;
       padding: 10px;
       border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
     .cell {
       display: flex;
@@ -52,18 +54,18 @@ permalink: /game
         border-radius: 15px;
         font-size: 20px;
         cursor: pointer;
-        margin-bottom: 10px;
     }
     .restart-container {
         display:grid;
         justify-content: center;
         align-items:start;
         margin-top: 20px;
+        margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="game-container">
+  <div class="game-container" id="game">
     <div class="instruction">
     	Press WASD or swipe the screen to start.  
     	<br />
@@ -71,7 +73,7 @@ permalink: /game
     	<br />
     	Detailed rules of 2048 can be found here in <a href="https://en.wikipedia.org/wiki/2048_(video_game)#Gameplay" style="color: #776e65;"><i><b>Rules of 2048</b></i></a>
     </div>
-    <div class="grid">
+    <div class="grid" id="grid">
       <!-- 游戏方格 -->
       <div class="cell">0</div>
       <div class="cell">0</div>
@@ -111,6 +113,8 @@ permalink: /game
       [0, 0, 0, 0],
       [0, 0, 0, 0]
     ];
+    // 获取游戏容器元素
+    const game = document.getElementById('grid');
     // 在 JavaScript 中获取按钮元素
     const restartButton = document.getElementById("restart-button");
     restartButton.addEventListener("click", restartGame);
@@ -122,12 +126,14 @@ permalink: /game
       document.addEventListener("keydown", handleKeyPress);
       // 监听触摸事件
       document.addEventListener("touchstart", handleTouchStart, false);
-      document.addEventListener("touchmove", handleTouchMove, false);
-      document.addEventListener("touchend", handleTouchEnd, false);
-      // 禁用页面滑动
+      // 禁用网页的默认滚动行为
       document.addEventListener('touchmove', function(event) {
-        event.preventDefault();
+        if (game.contains(event.target)) {
+            // 不在游戏界面内的滑动操作，允许页面滚动
+            event.preventDefault();
+        }
       }, { passive: false });
+      document.addEventListener("touchend", handleTouchEnd, false);
     });
     // 初始化游戏界面
     function initializeGrid() {
@@ -179,17 +185,20 @@ permalink: /game
       // 判断游戏是否胜利或失败
       checkGameOver();
     }
-    let startX, startY;
+    let startX, startY,valid=false;
     const touchThreshold = 50; // 滑动阈值，小于该值不触发移动操作
     // 触摸开始事件处理
     function handleTouchStart(event) {
       const touch = event.touches[0];
       startX = touch.clientX;
       startY = touch.clientY;
-    }
-    // 触摸移动事件处理
-    function handleTouchMove(event) {
-      event.preventDefault();
+      if (game.contains(event.target)) {
+            valid = true;
+            event.preventDefault();
+      }else{
+        // 不在游戏界面内的滑动操作，允许页面滚动, 不允许逻辑运行
+            valid = false;
+      }
     }
     // 触摸结束事件处理
     function handleTouchEnd(event) {
@@ -198,6 +207,11 @@ permalink: /game
       const endY = touch.clientY;
       const deltaX = endX - startX;
       const deltaY = endY - startY;
+      if (valid == false){
+        // touch outside of game field
+        event.preventDefault();
+        return;
+      }
       if (Math.abs(deltaX) < touchThreshold && Math.abs(deltaY) < touchThreshold) {
         // 滑动距离太小，忽略滑动操作
         return;
