@@ -194,7 +194,6 @@ permalink: /game
       startY = touch.clientY;
       if (game.contains(event.target)) {
             valid = true;
-            event.preventDefault();
       }else{
         // 不在游戏界面内的滑动操作，允许页面滚动, 不允许逻辑运行
             valid = false;
@@ -209,7 +208,6 @@ permalink: /game
       const deltaY = endY - startY;
       if (valid == false){
         // touch outside of game field
-        event.preventDefault();
         return;
       }
       if (Math.abs(deltaX) < touchThreshold && Math.abs(deltaY) < touchThreshold) {
