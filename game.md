@@ -26,7 +26,7 @@ permalink: /game
       font-family: Arial, sans-serif;
       background-color: #faf8ef;
     }
-
+    
     .game-container {
       display: flex;
       flex-direction: column;
@@ -36,7 +36,7 @@ permalink: /game
       background-color: #faf8ef;
       border-radius: 50px;
     }
-
+    
     .grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -46,7 +46,7 @@ permalink: /game
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
-
+    
     .cell {
       display: flex;
       justify-content: center;
@@ -59,7 +59,7 @@ permalink: /game
       width: 80px;
       height: 80px;
     }
-
+    
     .game-button {
       background-color: hsl(35, 29%, 85%);
       color: #776e65;
@@ -69,7 +69,7 @@ permalink: /game
       font-size: 20px;
       cursor: pointer;
     }
-
+    
     .restart-container {
       display: grid;
       justify-content: center;
@@ -77,7 +77,7 @@ permalink: /game
       margin-top: 20px;
       margin-bottom: 10px;
     }
-
+    
     /* 排行榜容器 */
     .rankings-container {
       text-align: center;
@@ -87,7 +87,7 @@ permalink: /game
       margin-top: 20px;
       margin-bottom: 10px;
     }
-
+    
     /* 排行榜标题样式 */
     .rankings-title {
       font-size: 18px;
@@ -95,7 +95,7 @@ permalink: /game
       color: #776e65;
       margin-bottom: 10px;
     }
-
+    
     /* 排行榜条目样式 */
     .rankings-item {
       font-size: 16px;
@@ -108,13 +108,13 @@ permalink: /game
       align-items: center;
       /* 垂直居中对齐 */
     }
-
+    
     /* 排行榜玩家名字 */
     .rankings-player {
       font-weight: bold;
       margin-right: 40px;
     }
-
+    
     /* 排行榜分数 */
     .rankings-score {
       font-weight: bold;
@@ -168,9 +168,9 @@ permalink: /game
   <footer>
     <p>
       <br />
-      99% of this game is created by ChatGPT.
+      Realtime Ranking is supported by Firebase.
       <br />
-      Welcome to the new era of AI! ❛‿˂̵✧
+      Have fun! ❛‿˂̵✧
     </p>
   </footer>
   <script type="module">
@@ -193,19 +193,19 @@ permalink: /game
       measurementId: "G-MM7EJS4YSC",
       databaseURL: "https://persenal-web-2048-default-rtdb.europe-west1.firebasedatabase.app/",
     };
-
+    
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
     const database = getDatabase(app);
-
+    
     function writeUserScore(name, score) {
       set(ref(database, 'ranking/' + name), {
         score: score
       });
     }
     window.sharedFunction = writeUserScore;
-
+    
     const rankingElement = document.getElementById('ranking');
     const ranking = ref(database, 'ranking/');
     onValue(ranking, (snapshot) => {
@@ -213,10 +213,10 @@ permalink: /game
       const dataArray = Object.entries(ranktable).map(([key, value]) => ({ name: key, score: value.score }));
       // 根据分数属性进行排序（从高到低）
       const sortedData = dataArray.sort((a, b) => b.score - a.score);
-
+    
       updateRanking(sortedData);
     });
-
+    
     function updateRanking(sortedData) {
       while (rankingElement.children[1]) {
         rankingElement.children[1].remove();
@@ -224,20 +224,20 @@ permalink: /game
       for (let i = 0; i < 3; i++) {
         const rankingItemElement = document.createElement("div");
         rankingItemElement.classList.add("rankings-item");
-
+    
         const rankingPlayerElement = document.createElement("div");
         rankingPlayerElement.classList.add("rankings-player");
         rankingPlayerElement.textContent = sortedData[i].name;
-
+    
         const rankingScoreElement = document.createElement("div");
         rankingScoreElement.classList.add("rankings-score");
         rankingScoreElement.textContent = sortedData[i].score;
-
+    
         rankingItemElement.appendChild(rankingPlayerElement);
         rankingItemElement.appendChild(rankingScoreElement);
         rankingElement.appendChild(rankingItemElement);
       }
-
+    
     }
 
   </script>
