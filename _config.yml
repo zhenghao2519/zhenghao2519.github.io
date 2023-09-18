@@ -33,6 +33,7 @@ theme: minima
 plugins:
   - jekyll-feed
 header_pages:
+  - game.md
   - cv.md
   - about.md
 
