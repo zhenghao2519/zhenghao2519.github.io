@@ -1,0 +1,53 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: home
+---
+
+<style>
+	.image-container {
+		position: relative;
+		/* 使按钮相对于这个容器定位 */
+		display: inline-block;
+		/* 保持容器大小与图片一致 */
+	}
+
+	.overlay-button {
+		position: absolute;
+		/* 将按钮相对于容器进行绝对定位 */
+		top: 15%;
+		/* 按钮位于容器垂直方向的中间位置 */
+		left: 50%;
+		/* 按钮位于容器水平方向的中间位置 */
+		transform: translate(-50%, -50%);
+		/* 使用 transform 属性使按钮居中 */
+		padding: 10px 10px;
+		/* 按钮的内边距，可以根据需要调整 */
+		background-color: rgba(0,0,0,0.0);
+		/* 按钮背景颜色 */
+		color: rgb(0, 0, 0);
+		/* 按钮文字颜色 */
+		border: none;
+		/* 去掉按钮边框 */
+		cursor: pointer;
+		/* 鼠标指针样式为手型 */
+		/* border: 1.5px solid rgba(0, 0, 0, 0.13); */
+		border-radius:30px;
+		font-style: italic;
+		font-size:min(4.5vw, 26px);
+	}
+</style>
+
+<div class="image-container">
+	<img src="\images\pic.jpg" alt="pic" style="zoom:60%;">
+	<a href="/game" class="overlay-button">have some fun first?</a>
+  </div>
+
+<!-- <div class="container" style="position: flex;">
+	<img src="\images\pic.jpg" alt="pic" style="zoom:60%;" />
+	<div>
+		<a href="/game"
+			style="width: 50%;height: 30; font-size:3vw;justify-content: center;text-align: center;border-radius:30px;display:flex;color: rgba(0,0,0,0.6);background-color: rgba(0,0,0,0.0);place-items:center;border: 1.5px solid rgba(0,0,0,0.3);cursor: pointer;position: absolute;margin-top:120px;top:0%;left:50%;transform: translate(-50%, -50%);"><i>Maybe
+				have some fun first?</i></a>
+	</div>
+</div> -->
