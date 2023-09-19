@@ -8,8 +8,13 @@ layout: home
 	.image-container {
 		position: relative;
 		/* 使按钮相对于这个容器定位 */
-		display: inline-block;
+		display: flex;
 		/* 保持容器大小与图片一致 */
+		align-items: center;
+		/* border: 4px solid rgba(0, 0, 0, 0.13);
+		border-radius: 30px; */
+		text-align: center;
+		justify-content: center;
 		padding-bottom: 5%;
 	}
 
@@ -18,13 +23,13 @@ layout: home
 		/* 将按钮相对于容器进行绝对定位 */
 		top: 15%;
 		/* 按钮位于容器垂直方向的中间位置 */
-		left: 50%;
+		left: 150%;
 		/* 按钮位于容器水平方向的中间位置 */
 		transform: translate(-50%, -50%);
 		/* 使用 transform 属性使按钮居中 */
 		padding: 10px 10px;
 		/* 按钮的内边距，可以根据需要调整 */
-		background-color: rgba(0,0,0,0.0);
+		background-color: rgba(0, 0, 0, 0.0);
 		/* 按钮背景颜色 */
 		color: rgb(0, 0, 0);
 		/* 按钮文字颜色 */
@@ -33,22 +38,121 @@ layout: home
 		cursor: pointer;
 		/* 鼠标指针样式为手型 */
 		/* border: 1.5px solid rgba(0, 0, 0, 0.13); */
-		border-radius:30px;
 		font-style: italic;
-		font-size:min(4.5vw, 26px);
+		font-size: min(4.5vw, 26px);
+	}
+
+	.hyperlink {
+		position: absolute;
+		/* 将按钮相对于容器进行绝对定位 */
+		top: 15%;
+		/* 按钮位于容器垂直方向的中间位置 */
+		left: 150%;
+		/* 按钮位于容器水平方向的中间位置 */
+		transform: translate(-50%, -50%);
+		/* 使用 transform 属性使按钮居中 */
+		padding: 10px 10px;
+		/* 按钮的内边距，可以根据需要调整 */
+		background-color: rgba(0, 0, 0, 0.0);
+		/* 按钮背景颜色 */
+		color: rgb(0, 0, 0);
+		/* 按钮文字颜色 */
+		border: none;
+		/* 去掉按钮边框 */
+		cursor: pointer;
+		/* 鼠标指针样式为手型 */
+		/* border: 1.5px solid rgba(0, 0, 0, 0.13); */
+		font-style: italic;
+		font-size: min(4.5vw, 26px);
+	}
+
+	.visiter-count {
+		font-size: 26px;
+		font-weight: 300;
+		line-height: 54px;
+		letter-spacing: -1px;
+		margin-bottom: 5%;
+	}
+
+	.greeting-container {
+		display: inline-block;
+		padding: 5%;
+	}
+
+	/* 在小屏幕下重新定义按钮样式 */
+	@media (max-width: 768px) {
+		/* .greeting-container {
+			display: block;
+			padding: 5%;
+			position:relative;
+		} */
+
+		.image-container {
+			padding-bottom: 5%;
+			display: block;
+			position: relative;
+		}
 	}
 </style>
 
 <div class="image-container">
-	<img src="\images\pic.jpg" alt="pic" style="zoom:60%; border-radius: 50px;">
-	<a href="/game" class="overlay-button">have some fun first?</a>
-  </div>
-
-<!-- <div class="container" style="position: flex;">
-	<img src="\images\pic.jpg" alt="pic" style="zoom:60%;" />
-	<div>
-		<a href="/game"
-			style="width: 50%;height: 30; font-size:3vw;justify-content: center;text-align: center;border-radius:30px;display:flex;color: rgba(0,0,0,0.6);background-color: rgba(0,0,0,0.0);place-items:center;border: 1.5px solid rgba(0,0,0,0.3);cursor: pointer;position: absolute;margin-top:120px;top:0%;left:50%;transform: translate(-50%, -50%);"><i>Maybe
-				have some fun first?</i></a>
+	<img src="\images\pic-lowquality.jpg" alt="pic"
+		style="zoom:10%; border-radius: 100px;display: flex; align-items: center; justify-content: center;">
+	<div class="greeting-container">
+		<div class="visiter-count">
+			You are the  <div id="countVisitors" style="display: inline; font-style: oblique; font-size: 40px;">0</div>
+			th visitor of this
+			site.
+		</div>
+		<a href="/game" class="post-link">Have some fun first?</a>
 	</div>
-</div> -->
+</div>
+
+<script type="module">
+	// Import the functions you need from t)he SDKs you need
+	import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+	import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+	import { getDatabase, ref, set, onValue, get } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+	// TODO: Add SDKs for Firebase products that you want to use
+	// https://firebase.google.com/docs/web/setup#available-libraries
+
+	// Your web app's Firebase configuration
+	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	const firebaseConfig = {
+		apiKey: "AIzaSyAUKJ2VNZ5PzFcWqZAM7MPYgjkn-6-NW5o",
+		authDomain: "persenal-web-2048.firebaseapp.com",
+		projectId: "persenal-web-2048",
+		storageBucket: "persenal-web-2048.appspot.com",
+		messagingSenderId: "898743704734",
+		appId: "1:898743704734:web:d6b048495a8ce80eaaef8f",
+		measurementId: "G-MM7EJS4YSC",
+		databaseURL: "https://persenal-web-2048-default-rtdb.europe-west1.firebasedatabase.app/",
+	};
+
+	// Initialize Firebase
+	const app = initializeApp(firebaseConfig);
+	const analytics = getAnalytics(app);
+	const database = getDatabase(app);
+
+	function writeVisitorCount(visiterCount) {
+		set(ref(database, 'numberVisitors'), visiterCount);
+	}
+	const numberVisitorsElement = document.getElementById('countVisitors');
+	const numberVisitors = ref(database, 'numberVisitors');
+	onValue(numberVisitors, (snapshot) => {
+		numberVisitorsElement.textContent = snapshot.val();
+	});
+
+	get(ref(database, 'numberVisitors')).then((snapshot) => {
+		if (snapshot.exists()) {
+			writeVisitorCount(snapshot.val() + 1);
+		} else {
+			console.log("No data available");
+		}
+	}).catch((error) => {
+		console.error(error);
+	});
+
+
+
+</script>
