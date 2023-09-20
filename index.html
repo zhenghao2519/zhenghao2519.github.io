@@ -133,7 +133,7 @@ layout: home
 	const database = getDatabase(app);
 
 	function writeVisitorCount(visiterCount) {
-		set(ref(database, 'numberVisitors'), visiterCount);
+		set(ref(database, 'numberVisitors'), parseInt(visiterCount));
 	}
 	const numberVisitorsElement = document.getElementById('countVisitors');
 	const numberVisitors = ref(database, 'numberVisitors');

@@ -201,10 +201,10 @@ permalink: /game
     
     function writeUserScore(name, score) {
       set(ref(database, 'ranking/' + name), {
-        score: score
+        score: parseInt(score)
       });
     }
-    window.sharedFunction = writeUserScore;
+    window.writeUserScore = writeUserScore;
     
     const rankingElement = document.getElementById('ranking');
     const ranking = ref(database, 'ranking/');
@@ -503,7 +503,7 @@ permalink: /game
             alert("You are the best! (ᕑᗢᓫ∗)˒");
             const name = prompt("Enter your name to upload your score：");
             if (name != null) {
-              window.sharedFunction(name, scoreElement.textContent);
+              window.writeUserScore(name, scoreElement.textContent);
             }
             return;
           }
@@ -555,7 +555,7 @@ permalink: /game
           alert("Gameover •ࡇ• press R or click the button to try again");
           const name = prompt("Enter your name to upload your score：");
           if (name != null) {
-            window.sharedFunction(name, scoreElement.textContent);
+            window.writeUserScore(name, scoreElement.textContent);
           }
         }
       }
