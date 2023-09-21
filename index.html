@@ -14,7 +14,6 @@ layout: home
 		/* border: 4px solid rgba(0, 0, 0, 0.13);
 		border-radius: 30px; */
 		text-align: center;
-		justify-content: center;
 		padding-bottom: 5%;
 	}
 
@@ -67,11 +66,11 @@ layout: home
 	}
 
 	.visiter-count {
-		font-size: 26px;
+		font-size: 20px;
 		font-weight: 300;
-		line-height: 54px;
-		letter-spacing: -1px;
-		margin-bottom: 5%;
+		/* letter-spacing: -1px; */
+		text-align: center;
+		font-style: italic;
 	}
 
 	.greeting-container {
@@ -79,32 +78,111 @@ layout: home
 		padding: 5%;
 	}
 
+	.self-intro-title {
+		display: block;
+		text-align: left;
+		font-size: 35px;
+		font-weight: 400;
+		line-height: 54px;
+		letter-spacing: -0.5px;
+		margin-bottom: 5%;
+	}
+
+	.self-intro-maintext {
+		display: block;
+		text-align: left;
+		font-size: 20px;
+		font-weight: 300;
+		letter-spacing: -0.5px;
+	}
+
+	.self-intro-link {
+		color: black;
+		text-decoration: underline;
+	}
+
+	.paragraph-container p {
+		margin-bottom: 20px;
+		/* 设置段落之间的下外边距 */
+	}
+
+	.publication{
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
 	/* 在小屏幕下重新定义按钮样式 */
 	@media (max-width: 768px) {
 		/* .greeting-container {
-			display: block;
 			padding: 5%;
-			position:relative;
-		} */
+			position: relative;
+			top: 0;
+		}
 
 		.image-container {
 			padding-bottom: 5%;
-			display:contents;
+			display: contents;
 			position: relative;
-		}
+			top: 100px;
+		} */
 	}
 </style>
-
 <div class="image-container">
 	<img src="\images\pic-lowquality.jpg" alt="pic"
-		style="zoom:10%; border-radius: 100px;display: flex; align-items: center; justify-content: center;">
-	<div class="greeting-container">
-		<div class="visiter-count">
-			You are the  <div id="countVisitors" style="display: inline; font-style: oblique; font-size: 40px;">0</div> th visitor of this site!
-		</div>
-		<a href="/game" class="post-link" style="font-weight: 300;">Have some fun first?</a>
-	</div>
+		style="zoom:4%; border-radius:100%;display: flex; align-items: center; justify-content: left;">
 </div>
+<div class="self-intro-title">
+	Hi, I'm Zhenghao. <br>
+	I love exploring brand new areas.
+</div>
+
+<div class="self-intro-maintext">
+	<p>
+		I'm a master student of Informatics at <a href="https://www.tum.de/en/"
+			style="color: #111; text-decoration: underline 1px rgb(110, 109, 109,0.5);">TU München</a>. <br>
+	</p>
+
+	<p>
+		I finished my bachelor at <a href="https://www.rwth-aachen.de/"
+			style="color: #111; text-decoration: underline 1px rgb(110, 109, 109,0.5);">RWTH Aachen</a> in 2023. <br>
+	</p>
+
+	<p>
+		I have learned a lot about the integration of decentralization and IoT ecosystems, and I'm familiar with
+		open projectes
+		from <a href="https://www.hyperledger.org/"
+			style="color: #111; text-decoration:underline 1px rgb(110, 109, 109,0.5);">Hyperledger
+			Foundation</a>.
+	</p>
+
+
+	I have experience in quite a lot of directions, including AR, UI design and AI stuffs. Details can be found in
+	my personal <a href="/cv" style="color: #111; text-decoration:underline 1px rgb(110, 109, 109,0.5);">
+		CV</a>.
+
+
+</div>
+
+<div class="greeting-container">
+	<a href="/game" class="post-link" style="font-weight: 300; margin: 0%; font-size: 20px;">Maybe have some fun first?</a>
+</div>
+
+<div class="visiter-count">
+	<i>Do you know?</i> <br>You are the <div id="countVisitors"
+		style="display: inline; font-style: oblique; font-size: 26px;">0</div>
+	th visitor of this site!
+</div>
+<!-- <div class="publication">
+	<div class="post-list-heading" style="margin-bottom: 15px;">
+		Publications
+	</div>
+	
+	<dic class="post-meta">
+		Oct 23,2023
+	</dic>
+</div> -->
+
+
 
 <script type="module">
 	// Import the functions you need from t)he SDKs you need
