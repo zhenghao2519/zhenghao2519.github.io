@@ -290,6 +290,8 @@ permalink: /game
     }
     // 重新开始游戏
     function restartGame() {
+      //clear score
+      scoreElement.textContent = 0;
       //clear all grid
       for (let j = 0; j < grid[0].length; j++) {
         for (let i = 0; i < grid.length; i++) {
