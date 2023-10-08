@@ -18,41 +18,12 @@ layout: page
 		/* margin-top: 20px; */
 	}
 
-	.overlay-button {
-		position: absolute;
-		/* 将按钮相对于容器进行绝对定位 */
-		top: 15%;
-		/* 按钮位于容器垂直方向的中间位置 */
-		left: 150%;
-		/* 按钮位于容器水平方向的中间位置 */
-		transform: translate(-50%, -50%);
-		/* 使用 transform 属性使按钮居中 */
-		padding: 10px 10px;
-		/* 按钮的内边距，可以根据需要调整 */
-		background-color: rgba(0, 0, 0, 0.0);
-		/* 按钮背景颜色 */
-		color: rgb(0, 0, 0);
-		/* 按钮文字颜色 */
-		border: none;
-		/* 去掉按钮边框 */
-		cursor: pointer;
-		/* 鼠标指针样式为手型 */
-		/* border: 1.5px solid rgba(0, 0, 0, 0.13); */
-		font-style: italic;
-		font-size: min(4.5vw, 26px);
-	}
-
-	.visiter-count {
-		font-size: 20px;
-		font-weight: 300;
-		/* letter-spacing: -1px; */
-		text-align: center;
-		font-style: italic;
-		border: #111 1px dashed;
-		border-radius: 15px;
-		margin-top: 100px;
-		margin-bottom: 100px;
-
+	.image {
+		zoom: 4.5%;
+		border-radius: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: left;
 	}
 
 	.greeting-container {
@@ -77,14 +48,34 @@ layout: page
 
 	}
 
-	.self-intro-link {
-		color: black;
-		text-decoration: underline;
+	.a.intro-link {
+		color: #444;
+		font-weight: 350;
 	}
 
 	.paragraph-container p {
 		margin-bottom: 20px;
 		/* 设置段落之间的下外边距 */
+	}
+
+
+	.visiter-count {
+		font-size: 20px;
+		font-weight: 300;
+		/* letter-spacing: -1px; */
+		text-align: center;
+		font-style: italic;
+		border: #111 1px solid;
+		border-radius: 15px;
+		margin-top: 100px;
+		margin-bottom: 100px;
+
+	}
+
+	.count-number {
+		display: inline;
+		font-style: oblique;
+		font-size: 26px;
 	}
 
 	.publication {
@@ -93,7 +84,7 @@ layout: page
 	}
 
 	/* 在小屏幕下重新定义按钮样式 */
-	@media (max-width: 768px) {
+	@media (max-width: 480px) {
 		/* .greeting-container {
 			padding: 5%;
 			position: relative;
@@ -106,11 +97,46 @@ layout: page
 			position: relative;
 			top: 100px;
 		} */
+
+		a.intro-link {
+			/* text-decoration: underline 0.6px rgba(69, 69, 69, 0.473); */
+			font-weight: 300;
+		}
+
+		.image-container {
+			margin-bottom: 40px;
+		}
+
+		.image {
+			zoom: 2.75%;
+		}
+
+		.self-intro-title {
+			font-size: 24px;
+			margin-bottom: 40px;
+		}
+
+		.self-intro-maintext {
+			font-size: 14px;
+		}
+
+		.paragraph-container p {
+			margin-bottom: 10px;
+		}
+
+		.visiter-count {
+			font-size: 16px;
+			margin-top: 75px;
+			margin-bottom: 75px;
+		}
+
+		.count-number{
+			font-size: 22px;
+		}
 	}
 </style>
 <div class="image-container">
-	<img src="\images\pic-lowquality.jpg" alt="pic"
-		style="zoom:4.5%; border-radius:100%;display: flex; align-items: center; justify-content: left;">
+	<img src="\images\pic-lowquality.jpg" alt="pic" class="image">
 </div>
 <div class="self-intro-title">
 	Hi, I'm Zhenghao👋 <br>
@@ -120,40 +146,40 @@ layout: page
 
 <div class="self-intro-maintext">
 	<p>
-		I'm a master student of Informatics at <a href="https://www.tum.de/en/"
-			style="color: #111; text-decoration: underline 1px rgb(110, 109, 109,0.5);">TU München</a>. <br>
+		I'm a master student of Informatics at <a class="intro-link" href="https://www.tum.de/en/"
+			style="color: #111;font-style:oblique;">TU
+			München</a>. <br>
 	</p>
 
 	<p>
-		I finished my bachelor at <a href="https://www.rwth-aachen.de/"
-			style="color: #111; text-decoration: underline 1px rgb(110, 109, 109,0.5);">RWTH Aachen</a> in 2023. <br>
+		I finished my bachelor at <a class="intro-link" href="https://www.rwth-aachen.de/" style="color: #111;font-style:oblique;">RWTH
+			Aachen</a> in 2023. <br>
 	</p>
 
 	<p>
-		I have learned a lot about the integration of decentralization technologies and IoT ecosystems, and I'm familiar with
+		I have learned a lot about the integration of decentralization technologies and IoT ecosystems, and I'm familiar
+		with
 		open projects
-		from <a href="https://www.hyperledger.org/"
-			style="color: #111; text-decoration:underline 1px rgb(110, 109, 109,0.5);">Hyperledger
+		from <a class="intro-link" href="https://www.hyperledger.org/" style="color: #111;font-style:oblique;">Hyperledger
 			Foundation</a>.
 	</p>
 
-	<p>I have experiences in various directions, including AR, UI design and AI staffs. More details can be found in
-		my personal <a href="/cv" style="color: #111; text-decoration:underline 1px rgb(110, 109, 109,0.5);">
-			CV</a>.
+	<p>
+		I have experiences in various directions, including AR, UI design and AI staffs. More details can be found in
+		my personal <a class="intro-link" href="/cv" style="color: #111;font-style:oblique;">
+			Curriculum Vitae</a>.
 	</p>
 
+	<a class="intro-link" href="/game" style="color: #111; font-style:oblique;">Maybe have some fun
+		first? </a>
 
 
 </div>
 
-<div class="greeting-container">
-	<a href="/game" class="post-link" style="font-weight: 300; margin: 0%; font-size: 18px;">Maybe have some fun
-		first?</a>
-</div>
 
 <div class="visiter-count">
-	<i>Do you know?</i> <br>You are the <div id="countVisitors"
-		style="display: inline; font-style: oblique; font-size: 26px; ">0</div>
+	<i>Do you know?</i> <br>You are the <div id="countVisitors" class="count-number"
+		 >0</div>
 	th visitor of this site!
 </div>
 <!-- <div class="publication">

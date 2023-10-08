@@ -38,7 +38,7 @@ permalink: /game
     }
     
     .grid {
-      zoom: 90%;
+      zoom:normal;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 10px;
@@ -121,6 +121,21 @@ permalink: /game
       font-weight: bold;
       color: #e65100;
       /* 橙色字体 */
+    }
+
+    @media (max-width: 480px) {
+      .instruction{
+        font-size: 12px;
+      }
+      .grid{
+        gap: 7px;
+        padding: 7px;
+      }
+      .cell{
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+      }
     }
   </style>
 </head>
