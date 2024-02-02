@@ -77,8 +77,8 @@ layout: page
 	}
 
 	.publication {
-		margin-top: 15px;
-		margin-bottom: 15px;
+		margin-top: 80px;
+		margin-bottom: 40px;
 	}
 
 	/* 在小屏幕下重新定义按钮样式 */
@@ -128,7 +128,7 @@ layout: page
 			margin-bottom: 75px;
 		}
 
-		.count-number{
+		.count-number {
 			font-size: 22px;
 		}
 	}
@@ -145,17 +145,18 @@ layout: page
 <div class="self-intro-maintext">
 	<p>
 		I'm a master student of Informatics at <a class="intro-link" href="https://www.tum.de/en/"
-			style="color: #111;font-style:oblique;">TU
+			style="color: #111;  ">TU
 			München</a>. <br>
 	</p>
 
 	<p>
 		I'm an active member of <a class="intro-link" href="https://www.youtube.com/channel/UCdRJlz8S3abRwsXXBn5xstw"
-			style="color: #111;font-style:oblique;">CSSA Garching</a>. <br>
+			style="color: #111;  ">CSSA Garching</a>. <br>
 	</p>
 
 	<p>
-		I finished my bachelor at <a class="intro-link" href="https://www.rwth-aachen.de/" style="color: #111;font-style:oblique;">RWTH
+		I finished my bachelor at <a class="intro-link" href="https://www.rwth-aachen.de/"
+			style="color: #111;  ">RWTH
 			Aachen</a> in 2023. <br>
 	</p>
 
@@ -163,85 +164,92 @@ layout: page
 		I have learned a lot about the integration of decentralization technologies and IoT ecosystems, and I'm familiar
 		with
 		open projects
-		from <a class="intro-link" href="https://www.hyperledger.org/" style="color: #111;font-style:oblique;">Hyperledger
+		from <a class="intro-link" href="https://www.hyperledger.org/"
+			style="color: #111;  ">Hyperledger
 			Foundation</a>.
 	</p>
 
 	<p>
 		I have experiences in various directions, including AR, UI design and AI stuffs. More details can be found in
-		my personal <a class="intro-link" href="/cv" style="color: #111;font-style:oblique;">
+		my personal <a class="intro-link" href="/cv" style="color: #111;  ">
 			Curriculum Vitae</a>.
 	</p>
 
-	<a class="intro-link" href="/game" style="color: #111; font-style:oblique;">Maybe have some fun
+	<a class="intro-link" href="/game" style="color: #111;font-style: oblique; font-size: larger; ">Maybe have some fun
 		first? </a>
 
 
 </div>
 
-
-<div class="visiter-count">
-	<i>Do you know?</i> <br>You are the <div id="countVisitors" class="count-number"
-		 >0</div>
-	th visitor of this site!
-</div>
-<!-- <div class="publication">
+<div class="publication">
 	<div class="post-list-heading" style="margin-bottom: 15px;">
 		Publications
 	</div>
-	
+
 	<dic class="post-meta">
-		Oct 23,2023
+		Aug, 2023
 	</dic>
-</div> -->
+	<a href="https://doi.org/10.1109/FiCloud58648.2023.00031" class="post-link" style="color: rgb(28, 6, 78);">Self-sovereign Identity-based Access
+		Control Management in Forestry 4.0</a>
+	<div class="post-meta">
+		Y. Mou, J. Chen, Z. Zhang, J. Roßmann and S. Decker, 2023 10th International Conference on Future Internet of Things and Cloud (FiCloud), Marrakesh,
+		Morocco, 2023, pp. 159-166, doi: 10.1109/FiCloud58648.2023.00031.
+	</div>
+
+
+	<div class="visiter-count">
+		<i>Do you know?</i> <br>You are the <div id="countVisitors" class="count-number">0</div>
+		th visitor of this site!
+	</div>
 
 
 
-<script type="module">
-	// Import the functions you need from t)he SDKs you need
-	import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-	import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
-	import { getDatabase, ref, set, onValue, get } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
-	// TODO: Add SDKs for Firebase products that you want to use
-	// https://firebase.google.com/docs/web/setup#available-libraries
 
-	// Your web app's Firebase configuration
-	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-	const firebaseConfig = {
-		apiKey: "AIzaSyAUKJ2VNZ5PzFcWqZAM7MPYgjkn-6-NW5o",
-		authDomain: "persenal-web-2048.firebaseapp.com",
-		projectId: "persenal-web-2048",
-		storageBucket: "persenal-web-2048.appspot.com",
-		messagingSenderId: "898743704734",
-		appId: "1:898743704734:web:d6b048495a8ce80eaaef8f",
-		measurementId: "G-MM7EJS4YSC",
-		databaseURL: "https://persenal-web-2048-default-rtdb.europe-west1.firebasedatabase.app/",
-	};
+	<script type="module">
+		// Import the functions you need from t)he SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+		import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+		import { getDatabase, ref, set, onValue, get } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
 
-	// Initialize Firebase
-	const app = initializeApp(firebaseConfig);
-	const analytics = getAnalytics(app);
-	const database = getDatabase(app);
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+			apiKey: "AIzaSyAUKJ2VNZ5PzFcWqZAM7MPYgjkn-6-NW5o",
+			authDomain: "persenal-web-2048.firebaseapp.com",
+			projectId: "persenal-web-2048",
+			storageBucket: "persenal-web-2048.appspot.com",
+			messagingSenderId: "898743704734",
+			appId: "1:898743704734:web:d6b048495a8ce80eaaef8f",
+			measurementId: "G-MM7EJS4YSC",
+			databaseURL: "https://persenal-web-2048-default-rtdb.europe-west1.firebasedatabase.app/",
+		};
 
-	function writeVisitorCount(visiterCount) {
-		set(ref(database, 'numberVisitors'), parseInt(visiterCount));
-	}
-	const numberVisitorsElement = document.getElementById('countVisitors');
-	const numberVisitors = ref(database, 'numberVisitors');
-	onValue(numberVisitors, (snapshot) => {
-		numberVisitorsElement.textContent = snapshot.val();
-	});
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		const analytics = getAnalytics(app);
+		const database = getDatabase(app);
 
-	get(ref(database, 'numberVisitors')).then((snapshot) => {
-		if (snapshot.exists()) {
-			writeVisitorCount(snapshot.val() + 1);
-		} else {
-			console.log("No data available");
+		function writeVisitorCount(visiterCount) {
+			set(ref(database, 'numberVisitors'), parseInt(visiterCount));
 		}
-	}).catch((error) => {
-		console.error(error);
-	});
+		const numberVisitorsElement = document.getElementById('countVisitors');
+		const numberVisitors = ref(database, 'numberVisitors');
+		onValue(numberVisitors, (snapshot) => {
+			numberVisitorsElement.textContent = snapshot.val();
+		});
+
+		get(ref(database, 'numberVisitors')).then((snapshot) => {
+			if (snapshot.exists()) {
+				writeVisitorCount(snapshot.val() + 1);
+			} else {
+				console.log("No data available");
+			}
+		}).catch((error) => {
+			console.error(error);
+		});
 
 
 
-</script>
+	</script>

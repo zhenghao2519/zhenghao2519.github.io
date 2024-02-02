@@ -19,40 +19,39 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Zhenghao Zhang
-email: zhenghao.zhang@rwth-aachen.de
+email: zhenghao.zhang@tum.de
 description: >- # this means to ignore newlines until "baseurl:"
   - ( ゜- ゜)つロ
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
-github_username:  zhenghao2519
-linkedin_username: zhenghao2519
-instagram_username: psy_hao
-# telegram: 
+# github_username:  zhenghao2519
+# linkedin_username: zhenghao2519
 
 
-# Build settings
-theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+# # Build settings
+# theme: minima
+# plugins:
+#   - jekyll-feed
+#   - jekyll-seo-tag
 header_pages:
   - game.md
   - cv.md
   - about.md
 
-# remote_theme: jekyll/minima
+remote_theme: jekyll/minima
 
-# plugins:
-#   - jekyll-seo-tag
-#   - jekyll-feed
-#   - jekyll-remote-theme
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-remote-theme
 
-# minima:
-#   skin: classic
-#   social_links:
-#     -  platform: bilibili
-#        user_url: "https://space.bilibili.com/23382927" 
+
+minima:
+  social_links:
+    - { platform: github,  user_url: "https://github.com/zhenghao2519" }
+    - { platform: linkedin, user_url: "https://www.linkedin.com/in/zhenghao2519/" }
+    - { platform: researchgate, user_url: "https://www.researchgate.net/profile/Zhenghao-Zhang-20" }
 
 # Exclude from processing.
 # The following items will not be processed, by default.
