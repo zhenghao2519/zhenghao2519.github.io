@@ -52,6 +52,7 @@ minima:
     - { platform: github,  user_url: "https://github.com/zhenghao2519" }
     - { platform: linkedin, user_url: "https://www.linkedin.com/in/zhenghao2519/" }
     - { platform: researchgate, user_url: "https://www.researchgate.net/profile/Zhenghao-Zhang-20" }
+    - { platform: google_scholar, user_url: "https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AH70aAU0b8ZiZcqlvQco5NIXE2s8dl5dj9JV99Rv8RD-Tbcczkl6av0kgK3U8DKL5ekWimD8DiwxSKU4wziTcQ&user=dbCPMkoAAAAJ" }
 
 # Exclude from processing.
 # The following items will not be processed, by default.
