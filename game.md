@@ -1,5 +1,5 @@
 ---
-title: Play 2048!
+title: Play 2048
 layout: page
 permalink: /game
 ---
