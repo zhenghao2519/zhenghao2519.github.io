@@ -37,7 +37,6 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 header_pages:
   - game.md
   - cv.md
-  - about.md
 
 remote_theme: jekyll/minima
 
