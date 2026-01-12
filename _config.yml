@@ -30,15 +30,15 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # # Build settings
-theme: minima
+# theme: minima
 # plugins:
 #   - jekyll-feed
 #   - jekyll-seo-tag
-header_pages:
-  - game.md
-  - cv.md
+# header_pages:
+#   - game.md
+#   - cv.md
 
-# remote_theme: jekyll/minima
+remote_theme: jekyll/minima
 
 plugins:
   - jekyll-seo-tag
@@ -47,11 +47,31 @@ plugins:
 
 
 minima:
+  nav_pages:
+    - game.md
+    - cv.md
+  # social_links:
+  #   - { platform: github,  user_url: "https://github.com/zhenghao2519" }
+  #   - { platform: linkedin, user_url: "https://www.linkedin.com/in/zhenghao2519/" }
+  #   - { platform: researchgate, user_url: "https://www.researchgate.net/profile/Zhenghao-Zhang-20" }
+  #   - { platform: google_scholar, user_url: "https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AH70aAU0b8ZiZcqlvQco5NIXE2s8dl5dj9JV99Rv8RD-Tbcczkl6av0kgK3U8DKL5ekWimD8DiwxSKU4wziTcQ&user=dbCPMkoAAAAJ" }
   social_links:
-    - { platform: github,  user_url: "https://github.com/zhenghao2519" }
-    - { platform: linkedin, user_url: "https://www.linkedin.com/in/zhenghao2519/" }
-    - { platform: researchgate, user_url: "https://www.researchgate.net/profile/Zhenghao-Zhang-20" }
-    - { platform: google_scholar, user_url: "https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AH70aAU0b8ZiZcqlvQco5NIXE2s8dl5dj9JV99Rv8RD-Tbcczkl6av0kgK3U8DKL5ekWimD8DiwxSKU4wziTcQ&user=dbCPMkoAAAAJ" }
+    - title: GitHub profile
+      icon: github
+      url: "https://github.com/zhenghao2519"
+
+    - title: LinkedIn profile
+      icon: linkedin
+      url: "https://www.linkedin.com/in/zhenghao2519/"
+
+    - title: ResearchGate profile
+      icon: researchgate
+      url: "https://www.researchgate.net/profile/Zhenghao-Zhang-20"
+
+    - title: Google Scholar profile
+      icon: google-scholar
+      url: "https://scholar.google.com/citations?hl=en&view_op=list_works&user=dbCPMkoAAAAJ"
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
